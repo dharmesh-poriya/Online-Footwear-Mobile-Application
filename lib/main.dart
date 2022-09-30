@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:footware/pages/navigation.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      debugShowCheckedModeBanner: false,
       home: const MyHomePage(title: ''),
     );
   }
@@ -31,138 +33,56 @@ class MyHomePage extends StatefulWidget{
 }
 
 class _MyHomePageState extends State<MyHomePage>{
+  Icon customIcon = const Icon(Icons.search);
+  Widget titleText = const Text("Catchy Shoe");
+
   @override
   Widget build(BuildContext context)
   {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Home"),
+        title: titleText,
+        actions: [
+          IconButton(
+            onPressed: (){
+              setState(() {
+                if(customIcon.icon == Icons.search)
+                  {
+                    customIcon = const Icon(Icons.cancel);
+                    titleText = const ListTile(
+                      leading: Icon(Icons.search),
+                      title: TextField(
+                        decoration: InputDecoration(
+                          hintText: 'Search',
+                          hintStyle: TextStyle(
+                            color: Colors.white,
+                            fontSize:18.0,
+                            fontWeight: FontWeight.bold
+                          ),
+                          border: InputBorder.none
+                        ),
+                      ),
+
+                    );
+                  }
+                else{
+                  titleText = const Text("Catchy Shoe");
+                  customIcon = const Icon(Icons.search);
+                }
+              });
+            },
+            icon: customIcon,
+          ),
+        ],
         centerTitle: true,
         backgroundColor: Colors.pinkAccent,
       ),
 
-      drawer: const NavigationDrawer(),
-    );
-  }
-}
+      // drawer: const NavigationDrawer(),
 
-
-class NavigationDrawer extends StatelessWidget {
-  const NavigationDrawer({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return
-      Drawer(
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            buildHeader(context),
-            buildMenuItems(context),
-          ],
-        ),
+      body: Container(
+          child: Navigation(),
       ),
-    );
-  }
-
-  Widget buildHeader(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.only(
-        top: MediaQuery.of(context).padding.top,
-      ),
-    );
-  }
-
-  Widget buildMenuItems(BuildContext context){
-    return Column(
-
-      children: [
-        Padding(
-          padding: EdgeInsets.all(15),
-          child: Directionality(textDirection: TextDirection.ltr,
-            child: TextButton.icon(onPressed: (){},
-                icon: Icon(
-                  Icons.home_outlined,
-                  color: Colors.pink,
-                  size: 30.0,
-                ),
-                label: Text("Home",
-                style: TextStyle(
-                  fontSize: 20.0,
-                  color: Colors.pink
-                ),
-                )
-            )
-        ),
-        ),
-
-        Padding(padding: EdgeInsets.all(10),
-          child: Directionality(textDirection: TextDirection.ltr,
-            child: TextButton.icon(onPressed: (){},
-                icon: Icon(
-                  Icons.category_outlined,
-                  color: Colors.pink,
-                  size: 30.0,
-                ),
-                label: Text("Category",
-                  style: TextStyle(
-                    color: Colors.pink,
-                    fontSize: 20.0,
-                  ),)
-            ),
-
-          ),
-        ),
-
-
-        Directionality(textDirection: TextDirection.ltr,
-            child: TextButton.icon(onPressed: (){},
-                icon: Icon(
-                  Icons.shopping_cart,
-                  color: Colors.pink,
-                  size: 30.0,
-                ),
-                label: Text("Cart",
-                  style: TextStyle(
-                      color: Colors.pink,
-                    fontSize: 20.0,
-                  ),)
-            )
-        ),
-
-        Directionality(textDirection: TextDirection.ltr,
-            child: TextButton.icon(onPressed: (){},
-                icon: Icon(
-                  Icons.notifications,
-                  color: Colors.pink,
-                  size: 30.0,
-                ),
-                label: Text("Notification",
-                  style: TextStyle(
-                      color: Colors.pink,
-                    fontSize: 20.0,
-                  ),)
-            )
-        ),
-
-
-        Directionality(textDirection: TextDirection.ltr,
-            child: TextButton.icon(onPressed: (){},
-                icon: Icon(
-                  Icons.account_circle_sharp,
-                  color: Colors.pink,
-                  size: 30.0,
-                ),
-                label: Text("Account",
-                  style: TextStyle(
-                      color: Colors.pink,
-                    fontSize: 20.0,
-                  ),)
-            )
-        ),
-
-      ],
     );
   }
 }
