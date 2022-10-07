@@ -10,25 +10,35 @@ class Navigation extends StatefulWidget {
 class _NavigationState extends State<Navigation> {
   @override
   Widget build(BuildContext context) {
-    
+    int currentIndexValue = 0;
+
     return BottomNavigationBar(
+
         type: BottomNavigationBarType.fixed,
         backgroundColor: Colors.pink,
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.white.withOpacity(0.60),
         selectedFontSize: 14,
+        currentIndex: currentIndexValue,
         unselectedFontSize: 14,
-        onTap: (value) {},
+        onTap: (value) {
+
+          setState(() {
+            currentIndexValue = value;
+          });
+          print("Taped on $currentIndexValue");
+
+        },
         items: [
           BottomNavigationBarItem(
             label: 'Home',
             icon: const Icon(Icons.home),
-
           ),
 
           BottomNavigationBarItem(
               label: 'Categories',
-              icon: const Icon(Icons.category)
+              icon: const Icon(Icons.category),
+
           ),
 
           BottomNavigationBarItem(

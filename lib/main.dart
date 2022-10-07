@@ -80,9 +80,14 @@ class _MyHomePageState extends State<MyHomePage>{
 
       // drawer: const NavigationDrawer(),
 
-      body: Container(
-          child: Navigation(),
-      ),
+      body:Column(
+        children: [
+          Container(
+            child: Navigation(),
+          ),
+        ],
+      ) ,
+
     );
   }
 }
