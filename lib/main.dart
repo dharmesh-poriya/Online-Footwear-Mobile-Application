@@ -82,11 +82,10 @@ class _MyHomePageState extends State<MyHomePage>{
 
       body:Column(
         children: [
-          Container(
-            child: Navigation(),
-          ),
+
         ],
       ) ,
+      bottomNavigationBar: Navigation(),
 
     );
   }
