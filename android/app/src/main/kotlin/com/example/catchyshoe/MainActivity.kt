@@ -1,4 +1,4 @@
-package com.example.footware
+package com.example.catchyshoe
 
 import io.flutter.embedding.android.FlutterActivity
 

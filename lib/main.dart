@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:footware/pages/navigation.dart';
+import 'package:catchyshoe/pages/Navigationbar/navigation.dart';
 
 void main() {
   runApp(const MyApp());
@@ -47,24 +47,24 @@ class _MyHomePageState extends State<MyHomePage>{
             onPressed: (){
               setState(() {
                 if(customIcon.icon == Icons.search)
-                  {
-                    customIcon = const Icon(Icons.cancel);
-                    titleText = const ListTile(
-                      leading: Icon(Icons.search),
-                      title: TextField(
-                        decoration: InputDecoration(
+                {
+                  customIcon = const Icon(Icons.cancel);
+                  titleText = const ListTile(
+                    leading: Icon(Icons.search),
+                    title: TextField(
+                      decoration: InputDecoration(
                           hintText: 'Search',
                           hintStyle: TextStyle(
-                            color: Colors.white,
-                            fontSize:18.0,
-                            fontWeight: FontWeight.bold
+                              color: Colors.white,
+                              fontSize:18.0,
+                              fontWeight: FontWeight.bold
                           ),
                           border: InputBorder.none
-                        ),
                       ),
+                    ),
 
-                    );
-                  }
+                  );
+                }
                 else{
                   titleText = const Text("Catchy Shoe");
                   customIcon = const Icon(Icons.search);
@@ -90,5 +90,3 @@ class _MyHomePageState extends State<MyHomePage>{
     );
   }
 }
-
-
