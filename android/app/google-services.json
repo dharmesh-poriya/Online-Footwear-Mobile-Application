@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "625356938593",
+    "project_id": "footwear-shop-51dda",
+    "storage_bucket": "footwear-shop-51dda.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:625356938593:android:5b3d0e87de219bd0f93920",
+        "android_client_info": {
+          "package_name": "com.example.catchyshoe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "625356938593-htph5lh5hketeqetnlb6hevhv28qslff.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGcqC2QoLeMU4BGrjZsFDP6cyVPIGgVyQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "625356938593-htph5lh5hketeqetnlb6hevhv28qslff.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
