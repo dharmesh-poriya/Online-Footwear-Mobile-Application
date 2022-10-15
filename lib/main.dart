@@ -3,7 +3,8 @@ import 'package:catchyshoe/pages/Navigationbar/navigation.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:catchyshoe/pages/Authentication/signup.dart';
 import 'package:catchyshoe/pages/Authentication/login.dart';
-
+import 'package:catchyshoe/pages/Welcome/welcome_screen.dart';
+import 'package:catchyshoe/constants.dart';
 
 Future main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: const MyHomePage(title: '', isLogin:false),
+      home: const WelcomeScreen(),
+      // home: const MyHomePage(title: '', isLogin:false),
     );
   }
 }
