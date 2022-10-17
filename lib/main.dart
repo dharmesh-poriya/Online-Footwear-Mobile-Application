@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:catchyshoe/pages/Navigationbar/navigation.dart';
-import 'package:firebase_core/firebase_core.dart';
+// import 'package:firebase_core/firebase_core.dart';
 import 'package:catchyshoe/pages/Welcome/welcome_screen.dart';
 import 'package:catchyshoe/constants.dart';
 import 'package:catchyshoe/pages/Login//login.dart';
@@ -8,7 +8,7 @@ import 'package:catchyshoe/pages/Registration/register.dart';
 
 Future main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  // await Firebase.initializeApp();
 
   runApp(const MyApp());
 }

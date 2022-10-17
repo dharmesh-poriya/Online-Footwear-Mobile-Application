@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../constants.dart';
 import 'package:catchyshoe/pages/Login//login.dart';
 import 'package:catchyshoe/pages/Registration/register.dart';
+import 'package:catchyshoe/pages/product/addProduct.dart';
 
 class LoginAndSignupBtn extends StatelessWidget {
   const LoginAndSignupBtn({
@@ -38,6 +39,7 @@ class LoginAndSignupBtn extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (context) {
+                  // return AddProduct();
                   return MyRegister();
                 },
               ),
