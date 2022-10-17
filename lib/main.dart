@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:catchyshoe/pages/Navigationbar/navigation.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:catchyshoe/pages/Authentication/signup.dart';
-import 'package:catchyshoe/pages/Authentication/login.dart';
 import 'package:catchyshoe/pages/Welcome/welcome_screen.dart';
 import 'package:catchyshoe/constants.dart';
+import 'package:catchyshoe/pages/Login//login.dart';
+import 'package:catchyshoe/pages/Registration/register.dart';
 
 Future main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,6 +25,11 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
+      // home: MyLogin(),
+      routes: {
+        'register': (context) => MyRegister(),
+        'login': (context) => MyLogin(),
+      },
       home: const WelcomeScreen(),
       // home: const MyHomePage(title: '', isLogin:false),
     );
@@ -90,8 +95,6 @@ class _MyHomePageState extends State<MyHomePage>{
 
       body:Column(
         children: [
-            Login(),
-
         ],
       ) ,
       bottomNavigationBar: Navigation(),
